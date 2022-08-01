@@ -70,7 +70,7 @@ const Login = () => {
     onSubmit,
   })
   return (
-    <Container style={{ marginTop: '6rem' }}>
+    <Container style={{ marginTop: '6rem' }} fontFamily='Roboto mono'>
       <Box align='center'>
         <motion.div
           initial='hidden'

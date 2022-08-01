@@ -10,6 +10,7 @@ import {
   IoLogoReddit,
   IoLogoSteam,
   IoLogoAmazon,
+  IoStorefrontSharp,
   IoLink,
 } from 'react-icons/io5'
 
@@ -36,7 +37,9 @@ export const checkIcon = function (platform) {
     return <IoLogoSteam />
   } else if (platform === 'amazon') {
     return <IoLogoAmazon />
-  } else if (platform === 'other' || 'ecommerce' || 'personal site') {
+  } else if (platform === 'ecommerce') {
+    return <IoStorefrontSharp />
+  } else if (platform === 'other' || 'personal site') {
     return <IoLink />
   }
 }

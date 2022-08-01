@@ -5,35 +5,22 @@ const router = Router()
 
 //get any users profile from _id
 router.get('/profile/:id', async (req, res) => {
-  try {
-    const user = await User.findOne({ username: req.params.id })
-    if (!user) {
-      res.status(404)
-      res.send('Cant find user with this name')
-    } else {
-      res.send(user)
-      res.status(200)
-    }
-  } catch (err) {
-    res.status(404)
-    res.send(err)
+  const user = await User.findOne({ username: req.params.id })
+  if (!user) {
+    res.status(404).json({ msg: 'No user found with this id' })
+  } else {
+    res.send(user).status(200)
   }
 })
 
-//get user profile from session ID
+//get user profile from SID
 router.get('/profile', async (req, res) => {
-  const userSID = req.session.passport.user
   try {
-    const findUserBySid = await User.findOne({ _id: userSID })
-    if (findUserBySid) {
-      res.status(200)
-      res.send(findUserBySid)
-    } else {
-      res.status(404)
-      res.send('cant find user SID')
-    }
+    const userSID = req.session.passport.user
+    const findUserBySID = await User.findOne({ _id: userSID })
+    res.send(findUserBySID).status(200)
   } catch (err) {
-    console.log(err)
+    res.status(404).json({ msg: 'missing session id' })
   }
 })
 
@@ -45,11 +32,9 @@ router.patch('/profile/addlink', async (req, res) => {
     const updateLinks = await User.findByIdAndUpdate(userID, {
       $addToSet: { links: newLinks },
     })
-    res.send(updateLinks)
-    res.status(200)
+    res.send(updateLinks).status(200)
   } catch (err) {
-    console.log(err)
-    res.status(400)
+    res.status(500).json({ msg: 'unable to update links' })
   }
 })
 
@@ -61,9 +46,9 @@ router.patch('/profile/removelink', async (req, res) => {
     const removeLink = await User.findByIdAndUpdate(userID, {
       $pull: { links: link },
     })
-    res.send(removeLink)
+    res.send(removeLink).status(200)
   } catch (err) {
-    console.log(err)
+    res.status(500).json({ error: err })
   }
 })
 

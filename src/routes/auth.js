@@ -32,15 +32,20 @@ router.post('/register', async (req, res) => {
   }
 })
 
-router.post('/logout', (req, res) => {
+//logout user
+router.get('/logout', (req, res) => {
   req.logout((err) => {
     req.session.destroy()
-    res.clearCookie('connect.sid', { path: '/' }).status(200).send('Ok.')
+    res
+      .clearCookie('connect.sid', { path: '/', domain: 'localhost' })
+      .status(200)
+      .send('Ok.')
     if (err) {
       return next(err)
     }
   })
 })
+
 router.use((req, res, next) => {
   console.log('inside check')
   if (req.user) next()
