@@ -11,6 +11,7 @@ import {
   List,
   ListItem,
   Spacer,
+  Link,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import LinkButton from '../components/LinkButton'
@@ -73,6 +74,11 @@ const UserProfile = () => {
           >
             <ProfilePicture src={'/images/jaxon.jpg'} />
           </motion.div>
+          {isEditing && (
+            <Link color='#ff63c3' fontFamily='Roboto mono'>
+              change picture
+            </Link>
+          )}
           <Heading fontWeight='regular' fontFamily='Roboto mono'>
             {profileData.username}
           </Heading>
@@ -103,7 +109,14 @@ const UserProfile = () => {
         <Divider my={6} />
         <Box mt={4} display='flex' justify='end'>
           <Spacer />
-          <Box mr={2}>{isEditing && <AddLinkButton />}</Box>
+          <Box mr={2}>
+            {isEditing && (
+              <AddLinkButton
+                userLinks={userLinks}
+                setUserLinks={setUserLinks}
+              />
+            )}
+          </Box>
           <Box>
             <EditProfileButton />
           </Box>

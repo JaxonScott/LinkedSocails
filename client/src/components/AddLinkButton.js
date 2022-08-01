@@ -17,7 +17,7 @@ import { AddIcon } from '@chakra-ui/icons'
 import { useFormik } from 'formik'
 import { createLinkSchema } from '../schemas'
 
-const AddLinkButton = () => {
+const AddLinkButton = ({ userLinks, setUserLinks }) => {
   const onSubmit = async (values, actions) => {
     console.log(values)
     const links = {
@@ -37,7 +37,7 @@ const AddLinkButton = () => {
         }
       )
       .then((res) => {
-        console.log(res.data)
+        setUserLinks([...userLinks, links])
       })
       .catch((err) => {
         console.log(err)
