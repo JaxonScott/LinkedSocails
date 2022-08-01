@@ -1,0 +1,206 @@
+{
+  "accessors": [
+    {
+      "componentType": 5125,
+      "count": 2616,
+      "type": "SCALAR"
+    },
+    {
+      "componentType": 5126,
+      "count": 1344,
+      "max": [
+        1.007843137254902,
+        1.007843137254902,
+        1.007843137254902
+      ],
+      "min": [
+        -1.007843137254902,
+        -1.007843137254902,
+        -1.007843137254902
+      ],
+      "type": "VEC3"
+    },
+    {
+      "componentType": 5126,
+      "count": 1344,
+      "max": [
+        2.2034197657878187,
+        1.30244282949361,
+        4.802345085796287
+      ],
+      "min": [
+        -1.602344918903282,
+        -2.1023447996939923,
+        -0.0023448950614239684
+      ],
+      "type": "VEC3"
+    },
+    {
+      "componentType": 5126,
+      "count": 1344,
+      "max": [
+        0.9948893941480044,
+        0.5007484115201357
+      ],
+      "min": [
+        0.22776758600889413,
+        0.4992515884798643
+      ],
+      "type": "VEC2"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "BatatinhaRussa2021 (https://sketchfab.com/BatatinhaRussa2021)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/white-and-black-voxel-cat-d25ff8a86e7b497cbc38bc945bdd693b",
+      "title": "White and Black Voxel Cat"
+    },
+    "generator": "Sketchfab-12.66.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 1466
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1472,
+      "byteLength": 837
+    }
+  ],
+  "buffers": [
+    {
+      "name": "cat",
+      "byteLength": 2312,
+      "uri": "data:application/octet-stream;base64,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"
+    }
+  ],
+  "images": [
+    {
+      "name": "palette_baseColor",
+      "bufferView": 1,
+      "mimeType": "image/png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "palette",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
+        "metallicFactor": 0,
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "roughnessFactor": 1
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE"
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 0,
+          "material": 0,
+          "mode": 4,
+          "extensions": {
+            "KHR_draco_mesh_compression": {
+              "bufferView": 0,
+              "attributes": {
+                "NORMAL": 0,
+                "POSITION": 1,
+                "TEXCOORD_0": 2
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        2.220446049250313e-16,
+        -1,
+        0,
+        0,
+        1,
+        2.220446049250313e-16,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "Gato Preto.obj.cleaner.materialmerger.gles"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_2"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ],
+  "extensionsRequired": [
+    "KHR_draco_mesh_compression"
+  ],
+  "extensionsUsed": [
+    "KHR_draco_mesh_compression"
+  ]
+}
