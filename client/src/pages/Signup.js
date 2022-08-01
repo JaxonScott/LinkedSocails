@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import {
   Container,
@@ -19,6 +19,7 @@ import { signUpSchema } from '../schemas'
 import { TabTitle } from '../utils/GeneralFunctions'
 
 const Signup = () => {
+  const [signUpErr, setSignUpErr] = useState(false)
   TabTitle('Linked - Sign up')
   const navigate = useNavigate()
   const { isLoggedIn } = useContext(IsLoggedInContext)
@@ -49,6 +50,7 @@ const Signup = () => {
       })
       .catch((err) => {
         console.log(err)
+        setSignUpErr(true)
       })
   }
   const {
@@ -165,6 +167,11 @@ const Signup = () => {
             <p style={{ color: 'red' }}>{errors.confirmPassword}</p>
           )}
         </FormControl>
+        {signUpErr && (
+          <Text color='red.500' fontSize='sm'>
+            Username or email is already taken.
+          </Text>
+        )}
         <Box mt={2}>
           <Text>
             Already have an account? Login

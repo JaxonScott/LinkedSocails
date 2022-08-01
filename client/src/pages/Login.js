@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { IsLoggedInContext } from '../contexts/IsLoggedIn'
 import {
   Container,
@@ -21,6 +21,7 @@ import Footer from '../components/Footer'
 import { TabTitle } from '../utils/GeneralFunctions'
 
 const Login = () => {
+  const [logInErr, setLogInErr] = useState(false)
   TabTitle('Linked - Login')
   const { setIsLoggedIn, isLoggedIn } = useContext(IsLoggedInContext)
   const navigate = useNavigate()
@@ -48,7 +49,7 @@ const Login = () => {
         }
       })
       .catch((err, res) => {
-        console.log(err)
+        setLogInErr(true)
       })
     actions.resetForm()
   }
@@ -134,6 +135,11 @@ const Login = () => {
             <p style={{ color: 'red' }}>{errors.password}</p>
           )}
         </FormControl>
+        {logInErr && (
+          <Text fontSize='sm' color='red.500' mt={1}>
+            Login failed, please try again.
+          </Text>
+        )}
         <Box mt={2}>
           <Text>
             New to linked? Sign up

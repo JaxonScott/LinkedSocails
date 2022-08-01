@@ -16,8 +16,8 @@ router.post('/login', passport.authenticate('local'), (req, res) => {
 
 //register new user
 router.post('/register', async (req, res) => {
-  const { email } = req.body
-  const userDB = await User.findOne({ email })
+  const { email, username } = req.body
+  const userDB = await User.findOne({ $or: [{ email }, { username }] })
   if (userDB) {
     res.status(400).send({ msg: 'User already exist' })
   } else {
