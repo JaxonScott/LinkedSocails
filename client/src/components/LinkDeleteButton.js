@@ -1,5 +1,16 @@
 import axios from 'axios'
-import { Button } from '@chakra-ui/react'
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  Divider,
+  ModalBody,
+  useDisclosure,
+  Container,
+  Box,
+} from '@chakra-ui/react'
 import { IoTrashSharp } from 'react-icons/io5'
 const LinkDeleteButton = ({
   link,
@@ -8,6 +19,7 @@ const LinkDeleteButton = ({
   userLinks,
   setUserLinks,
 }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const links = { link, title, platform }
   const removeLink = () => {
     axios
@@ -35,16 +47,52 @@ const LinkDeleteButton = ({
     console.log(links)
   }
   return (
-    <Button
-      variant='ghost'
-      p={4}
-      onClick={removeLink}
-      leftIcon={<IoTrashSharp />}
-      color='red.600'
-      mt={1}
-    >
-      Remove Link
-    </Button>
+    <Container>
+      <Button
+        variant='ghost'
+        p={4}
+        onClick={onOpen}
+        leftIcon={<IoTrashSharp />}
+        color='red.600'
+        mt={1}
+      >
+        Remove Link
+      </Button>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader fontFamily='Roboto mono' align='center'>
+            Are you sure you want to remove the link : {title}?
+          </ModalHeader>
+          <Container>
+            <Divider my={4} />
+          </Container>
+          <ModalBody>
+            <Box align='end'>
+              <Button
+                mr='1'
+                variant='ghost'
+                color='red.500'
+                fontFamily='Roboto mono'
+                rightIcon={<IoTrashSharp />}
+                fontSize='lg'
+                onClick={removeLink}
+              >
+                Remove
+              </Button>
+              <Button
+                variant='ghost'
+                fontFamily='Roboto mono'
+                fontSize='lg'
+                onClick={onClose}
+              >
+                Cancel
+              </Button>
+            </Box>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    </Container>
   )
 }
 

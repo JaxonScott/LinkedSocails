@@ -72,7 +72,7 @@ const UserProfile = () => {
               },
             }}
           >
-            <ProfilePicture src={'/images/jaxon.jpg'} />
+            <ProfilePicture src={profileData.profilePicture} />
           </motion.div>
           {isEditing && (
             <Link color='#ff63c3' fontFamily='Roboto mono'>

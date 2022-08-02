@@ -15,7 +15,7 @@ const ProfilePicture = ({ src }) => {
         maxWidth='100px'
         display='inline-block'
         borderRadius='full'
-        src={src}
+        src={src === '' ? '/images/default-pfp.jpg' : src}
         alt='Profile Picture'
       />
     </Box>

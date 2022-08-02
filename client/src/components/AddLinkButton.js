@@ -4,7 +4,6 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalCloseButton,
   ModalBody,
   useDisclosure,
   FormControl,
@@ -69,10 +68,10 @@ const AddLinkButton = ({ userLinks, setUserLinks }) => {
   return (
     <>
       <Button
-        bg='teal'
+        variant='ghost'
         leftIcon={<AddIcon />}
         color='whiteAlpha'
-        fontSize='xl'
+        fontSize='lg'
         fontWeight='normal'
         fontFamily='Roboto mono'
         p={4}
@@ -83,11 +82,10 @@ const AddLinkButton = ({ userLinks, setUserLinks }) => {
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalCloseButton />
           <ModalBody>
             <form onSubmit={handleSubmit}>
               <FormControl mt={2} isRequired>
-                <FormLabel>select platform</FormLabel>
+                <FormLabel fontFamily='Roboto mono'>select platform</FormLabel>
                 <Select
                   value={values.platform}
                   onChange={handleChange}
@@ -115,7 +113,7 @@ const AddLinkButton = ({ userLinks, setUserLinks }) => {
                 )}
               </FormControl>
               <FormControl mt={2} isRequired>
-                <FormLabel>link title</FormLabel>
+                <FormLabel fontFamily='Roboto mono'>link title</FormLabel>
                 <Input
                   placeholder='my instagram'
                   value={values.title}
@@ -128,7 +126,7 @@ const AddLinkButton = ({ userLinks, setUserLinks }) => {
                 )}
               </FormControl>
               <FormControl mt={2} isRequired>
-                <FormLabel>link</FormLabel>
+                <FormLabel fontFamily='Roboto mono'>link</FormLabel>
                 <Input
                   placeholder='https://www.instagram.com/user/'
                   value={values.link}
@@ -141,8 +139,22 @@ const AddLinkButton = ({ userLinks, setUserLinks }) => {
                 )}
               </FormControl>
               <Box mt={4} mb={4} align='end'>
-                <Button bg='teal' type='submit' disabled={isSubmitting}>
-                  Add link
+                <Button
+                  type='submit'
+                  disabled={isSubmitting}
+                  variant='ghost'
+                  fontFamily='Roboto mono'
+                  color='green.300'
+                  rightIcon={<AddIcon />}
+                >
+                  Submit
+                </Button>
+                <Button
+                  variant='ghost'
+                  fontFamily='Roboto mono'
+                  onClick={onClose}
+                >
+                  Cancel
                 </Button>
               </Box>
             </form>

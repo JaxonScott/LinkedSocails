@@ -31,10 +31,10 @@ const EditProfileButton = () => {
         <Button
           onClick={stopEditing}
           w='100%'
-          bg='green.500'
+          variant='ghost'
           p={4}
           fontSize='xl'
-          fontWeight='normal'
+          fontWeight='regular'
           fontFamily='Roboto mono'
         >
           Done
