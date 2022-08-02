@@ -28,7 +28,15 @@ const NavBar = () => {
                 <IoShareOutline />
               </Button>
             )}
-            {isLoggedIn ? <LogoutButton /> : <Button bg='teal'>Sign in</Button>}
+            {isLoggedIn ? (
+              <LogoutButton />
+            ) : (
+              <Link to='/signup'>
+                <Button bg='teal' fontFamily='Roboto mono'>
+                  Sign up
+                </Button>
+              </Link>
+            )}
           </ButtonGroup>
         </Box>
       </Flex>

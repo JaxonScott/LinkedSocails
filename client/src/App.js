@@ -12,6 +12,7 @@ import NavBar from './components/NavBar'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Users from './pages/Users'
+import PageNotFound from './pages/PageNotFound'
 
 //check login status
 function App() {
@@ -35,11 +36,13 @@ function App() {
         <editProfileContext.Provider value={{ isEditing, setIsEditing }}>
           <NavBar />
           <Routes>
-            <Route path='/' element={<LandingPage />} />
-            <Route path='/profile' element={<UserProfile />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<Signup />} />
-            <Route path='/user/:id' element={<Users />} />
+            <Route path='*' element={<PageNotFound />} />
+            <Route path='/' exact element={<LandingPage />} />
+            <Route path='/profile' exact element={<UserProfile />} />
+            <Route path='/login' exact element={<Login />} />
+            <Route path='/signup' exact element={<Signup />} />
+            <Route path='/user/:id' exact element={<Users />} />
+            <Route element={<PageNotFound />} />
           </Routes>
         </editProfileContext.Provider>
       </IsLoggedInContext.Provider>

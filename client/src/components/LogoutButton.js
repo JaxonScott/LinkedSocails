@@ -30,7 +30,7 @@ const LogoutButton = () => {
     }
   }
   return (
-    <Button onClick={logout} bg='teal'>
+    <Button onClick={logout} bg='teal' fontFamily='Roboto mono'>
       Log out
     </Button>
   )

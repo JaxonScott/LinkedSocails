@@ -1,11 +1,10 @@
-import { Button } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
+import { Button, Link } from '@chakra-ui/react'
 import { checkIcon } from './CheckIcon'
 
 const LinkButton = ({ children, link, icon }) => {
   const platformIcon = checkIcon(icon)
   return (
-    <Link to={link}>
+    <Link href={link} target='_blank'>
       <Button
         bg='teal'
         w='100%'

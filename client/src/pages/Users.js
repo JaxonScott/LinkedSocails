@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import {
@@ -14,6 +15,7 @@ import LinkButton from '../components/LinkButton'
 import { TabTitle } from '../utils/GeneralFunctions'
 
 const Users = () => {
+  const navigate = useNavigate()
   const { id } = useParams()
   TabTitle(`Linked - ${id}`)
   const [userData, setUserData] = useState([])
@@ -28,6 +30,7 @@ const Users = () => {
       })
       .catch((err) => {
         console.log(err)
+        navigate('/*')
       })
   }, [])
   if (loading) {
@@ -37,7 +40,7 @@ const Users = () => {
       <Container mt={10}>
         <Box align='center'>
           <ProfilePicture src={'/images/jaxon.jpg'} />
-          <Heading mb={2} fontWeight='regular'>
+          <Heading mb={2} fontWeight='regular' fontFamily='Roboto mono'>
             {id}
           </Heading>
           <Divider />
