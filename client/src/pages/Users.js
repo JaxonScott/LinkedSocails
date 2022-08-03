@@ -32,14 +32,14 @@ const Users = () => {
         console.log(err)
         navigate('/*')
       })
-  }, [])
+  }, [id, navigate])
   if (loading) {
     return <h1>Loading</h1>
   } else {
     return (
       <Container mt={10}>
         <Box align='center'>
-          <ProfilePicture src={'/images/jaxon.jpg'} />
+          <ProfilePicture src={userData.profilePicture} />
           <Heading mb={2} fontWeight='regular' fontFamily='Roboto mono'>
             {id}
           </Heading>

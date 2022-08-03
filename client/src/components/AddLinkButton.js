@@ -17,6 +17,7 @@ import { useFormik } from 'formik'
 import { createLinkSchema } from '../schemas'
 
 const AddLinkButton = ({ userLinks, setUserLinks }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const onSubmit = async (values, actions) => {
     console.log(values)
     const links = {
@@ -37,14 +38,13 @@ const AddLinkButton = ({ userLinks, setUserLinks }) => {
       )
       .then((res) => {
         setUserLinks([...userLinks, links])
+        onClose()
       })
       .catch((err) => {
         console.log(err)
       })
     actions.resetForm()
   }
-
-  const { isOpen, onOpen, onClose } = useDisclosure()
 
   const {
     values,
@@ -144,7 +144,6 @@ const AddLinkButton = ({ userLinks, setUserLinks }) => {
                   disabled={isSubmitting}
                   variant='ghost'
                   fontFamily='Roboto mono'
-                  color='green.300'
                   rightIcon={<AddIcon />}
                 >
                   Submit

@@ -20,6 +20,7 @@ import AddLinkButton from '../components/AddLinkButton'
 import EditProfileButton from '../components/EditProfileButton'
 import LinkDeleteButton from '../components/LinkDeleteButton'
 import { TabTitle } from '../utils/GeneralFunctions'
+import ShareProfile from '../components/ShareProfile'
 
 const UserProfile = () => {
   TabTitle('Linked - Profile')
@@ -74,11 +75,7 @@ const UserProfile = () => {
           >
             <ProfilePicture src={profileData.profilePicture} />
           </motion.div>
-          {isEditing && (
-            <Link color='#ff63c3' fontFamily='Roboto mono'>
-              change picture
-            </Link>
-          )}
+          {isEditing && <Link color='#ff63c3'>Change Picture</Link>}
           <Heading fontWeight='regular' fontFamily='Roboto mono'>
             {profileData.username}
           </Heading>
@@ -120,6 +117,10 @@ const UserProfile = () => {
           <Box>
             <EditProfileButton />
           </Box>
+        </Box>
+        <Box mt={4}>
+          <Divider my={6} />
+          <ShareProfile username={profileData.username} />
         </Box>
       </Container>
     )

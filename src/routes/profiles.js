@@ -1,4 +1,5 @@
 const { Router } = require('express')
+const multer = require('multer')
 const User = require('../database/schemas/User')
 
 const router = Router()
@@ -24,6 +25,24 @@ router.get('/profile', async (req, res) => {
   }
 })
 
+//change username
+router.patch('/profile/username', async (req, res) => {
+  try {
+    const userSID = req.session.passport.user
+    const { username } = req.body
+    const userDB = await User.findOne({ username })
+    if (userDB) {
+      res.status(400).json({ msg: 'username already taken' })
+    } else {
+      const changeUsername = await User.findOneAndUpdate(userSID, {
+        username: username,
+      })
+      res.status(200).json({ msg: 'OK' })
+    }
+  } catch (err) {
+    res.status(400).json({ error: err })
+  }
+})
 //add single link to user profile
 router.patch('/profile/addlink', async (req, res) => {
   const userID = req.session.passport.user

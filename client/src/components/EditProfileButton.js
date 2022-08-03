@@ -20,7 +20,7 @@ const EditProfileButton = () => {
           onClick={startEditing}
           variant='ghost'
           p={4}
-          fontSize='xl'
+          fontSize='lg'
           fontWeight='normal'
           fontFamily='Roboto mono'
           rightIcon={<AiOutlineEdit />}
@@ -33,8 +33,8 @@ const EditProfileButton = () => {
           w='100%'
           variant='ghost'
           p={4}
-          fontSize='xl'
-          fontWeight='regular'
+          fontSize='lg'
+          fontWeight='normal'
           fontFamily='Roboto mono'
         >
           Done

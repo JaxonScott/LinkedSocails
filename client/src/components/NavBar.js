@@ -23,11 +23,6 @@ const NavBar = () => {
         <Spacer />
         <Box>
           <ButtonGroup justifyContent='end'>
-            {isLoggedIn && (
-              <Button fontWeight='bolder' fontSize='xl' bg='teal'>
-                <IoShareOutline />
-              </Button>
-            )}
             {isLoggedIn ? (
               <LogoutButton />
             ) : (

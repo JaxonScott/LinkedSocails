@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from '@chakra-ui/react'
 import { Box, Text } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 const Footer = () => {
@@ -6,7 +6,7 @@ const Footer = () => {
     <Box mt={120} align='center'>
       <Text>
         Built by{' '}
-        <Link to='/'>
+        <Link href='http://localhost:3000/user/jaxon' target='_blank'>
           <span style={{ color: '#ff63c3' }}>
             JaxonCodes <ExternalLinkIcon />
           </span>
