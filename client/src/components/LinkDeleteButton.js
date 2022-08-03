@@ -61,7 +61,7 @@ const LinkDeleteButton = ({
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader fontFamily='Roboto mono' align='center'>
+          <ModalHeader align='center'>
             Are you sure you want to remove the link : {title}?
           </ModalHeader>
           <Container>
@@ -73,19 +73,13 @@ const LinkDeleteButton = ({
                 mr='1'
                 variant='ghost'
                 color='red.500'
-                fontFamily='Roboto mono'
                 rightIcon={<IoTrashSharp />}
                 fontSize='lg'
                 onClick={removeLink}
               >
                 Remove
               </Button>
-              <Button
-                variant='ghost'
-                fontFamily='Roboto mono'
-                fontSize='lg'
-                onClick={onClose}
-              >
+              <Button variant='ghost' fontSize='lg' onClick={onClose}>
                 Cancel
               </Button>
             </Box>

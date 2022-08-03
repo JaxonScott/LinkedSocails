@@ -14,7 +14,7 @@ const LandingPage = () => {
   }, [isLoggedIn, navigate])
 
   return (
-    <Container mt={9} fontFamily='Roboto mono'>
+    <Container mt={9}>
       <Box align='center'>
         <MovingModel />
         <Heading borderRadius={15}>
@@ -23,7 +23,6 @@ const LandingPage = () => {
             style={{
               textDecoration: 'underline',
               textDecorationColor: 'teal',
-              fontFamily: 'Roboto mono',
             }}
           >
             Linked

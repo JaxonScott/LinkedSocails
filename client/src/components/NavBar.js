@@ -27,9 +27,7 @@ const NavBar = () => {
               <LogoutButton />
             ) : (
               <Link to='/signup'>
-                <Button bg='teal' fontFamily='Roboto mono'>
-                  Sign up
-                </Button>
+                <Button bg='teal'>Sign up</Button>
               </Link>
             )}
           </ButtonGroup>

@@ -22,7 +22,6 @@ const EditProfileButton = () => {
           p={4}
           fontSize='lg'
           fontWeight='normal'
-          fontFamily='Roboto mono'
           rightIcon={<AiOutlineEdit />}
         >
           <span style={{ fontSize: '1rem' }}>Edit Profile</span>
@@ -35,7 +34,6 @@ const EditProfileButton = () => {
           p={4}
           fontSize='lg'
           fontWeight='normal'
-          fontFamily='Roboto mono'
         >
           Done
         </Button>

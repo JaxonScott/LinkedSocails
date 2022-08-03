@@ -12,7 +12,6 @@ const LinkButton = ({ children, link, icon }) => {
         fontSize='2xl'
         p={8}
         fontWeight='normal'
-        fontFamily='Roboto mono'
       >
         {children}
       </Button>

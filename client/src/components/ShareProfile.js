@@ -13,7 +13,6 @@ const ShareProfile = ({ username }) => {
   }
   return (
     <Button
-      fontFamily='Roboto mono'
       fontWeight='normal'
       variant='ghost'
       rightIcon={<IoShareOutline />}

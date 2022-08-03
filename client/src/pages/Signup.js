@@ -75,7 +75,7 @@ const Signup = () => {
   console.log(errors)
 
   return (
-    <Container style={{ marginTop: '4rem' }} mb={10} fontFamily='Roboto mono'>
+    <Container style={{ marginTop: '4rem' }} mb={10}>
       <Box align='center'>
         <motion.div
           initial='hidden'

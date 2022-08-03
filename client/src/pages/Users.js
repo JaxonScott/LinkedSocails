@@ -40,7 +40,7 @@ const Users = () => {
       <Container mt={10}>
         <Box align='center'>
           <ProfilePicture src={userData.profilePicture} />
-          <Heading mb={2} fontWeight='regular' fontFamily='Roboto mono'>
+          <Heading mb={2} fontWeight='regular'>
             {id}
           </Heading>
           <Divider />

@@ -73,7 +73,6 @@ const AddLinkButton = ({ userLinks, setUserLinks }) => {
         color='whiteAlpha'
         fontSize='lg'
         fontWeight='normal'
-        fontFamily='Roboto mono'
         p={4}
         onClick={onOpen}
       >
@@ -85,7 +84,7 @@ const AddLinkButton = ({ userLinks, setUserLinks }) => {
           <ModalBody>
             <form onSubmit={handleSubmit}>
               <FormControl mt={2} isRequired>
-                <FormLabel fontFamily='Roboto mono'>select platform</FormLabel>
+                <FormLabel>select platform</FormLabel>
                 <Select
                   value={values.platform}
                   onChange={handleChange}
@@ -113,7 +112,7 @@ const AddLinkButton = ({ userLinks, setUserLinks }) => {
                 )}
               </FormControl>
               <FormControl mt={2} isRequired>
-                <FormLabel fontFamily='Roboto mono'>link title</FormLabel>
+                <FormLabel>link title</FormLabel>
                 <Input
                   placeholder='my instagram'
                   value={values.title}
@@ -126,7 +125,7 @@ const AddLinkButton = ({ userLinks, setUserLinks }) => {
                 )}
               </FormControl>
               <FormControl mt={2} isRequired>
-                <FormLabel fontFamily='Roboto mono'>link</FormLabel>
+                <FormLabel>link</FormLabel>
                 <Input
                   placeholder='https://www.instagram.com/user/'
                   value={values.link}
@@ -143,16 +142,11 @@ const AddLinkButton = ({ userLinks, setUserLinks }) => {
                   type='submit'
                   disabled={isSubmitting}
                   variant='ghost'
-                  fontFamily='Roboto mono'
                   rightIcon={<AddIcon />}
                 >
                   Submit
                 </Button>
-                <Button
-                  variant='ghost'
-                  fontFamily='Roboto mono'
-                  onClick={onClose}
-                >
+                <Button variant='ghost' onClick={onClose}>
                   Cancel
                 </Button>
               </Box>

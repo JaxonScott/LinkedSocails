@@ -20,9 +20,7 @@ const PageNotFound = () => {
         <Heading fontWeight='normal' color='red.500'>
           404 Page Not Found
         </Heading>
-        <Text fontFamily='Roboto mono' mt={1}>
-          We are unable to find the page you are looking for.
-        </Text>
+        <Text mt={1}>We are unable to find the page you are looking for.</Text>
       </Box>
       <Divider my={6} />
       <Box mt={2}>
@@ -30,7 +28,6 @@ const PageNotFound = () => {
           <Button
             color='teal.300'
             variant='ghost'
-            fontFamily='Roboto mono'
             rightIcon={<IoChevronForward />}
           >
             Return Home

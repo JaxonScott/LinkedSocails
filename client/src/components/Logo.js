@@ -18,7 +18,6 @@ const Logo = () => {
       <LogoBox>
         <Text
           color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-          fontFamily='Roboto Mono'
           fontWeight='bold'
           textDecoration='underline'
           textDecorationColor='teal'

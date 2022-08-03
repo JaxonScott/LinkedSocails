@@ -1,12 +1,13 @@
 import { extendTheme } from '@chakra-ui/react'
 
-const theme = extendTheme({
-  fonts: {
-    heading: `'Lexend Deca', sans-serif`,
-    Text: `'Roboto Mono', sans-serif`,
-    button: `'Roboto Mono', sans-serif`,
-    link: `'Kanit', sans-serif`,
-  },
-})
+const config = {
+  initialColorMode: 'light',
+}
 
+const fonts = {
+  body: 'Roboto mono',
+  heading: 'Roboto mono',
+}
+
+const theme = extendTheme({ fonts, config })
 export default theme

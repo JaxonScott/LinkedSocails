@@ -134,23 +134,8 @@ const UserProfile = () => {
             <ProfilePicture src={profileData.profilePicture} />
           </motion.div>
           {isEditing && <Link color='#ff63c3'>Change Picture</Link>}
-          {!editUsername ? (
-            <Heading fontWeight='regular' fontFamily='Roboto mono'>
-              {profileData.username}{' '}
-              {isEditing && (
-                <Button
-                  onClick={handleEditUsernameState}
-                  variant='ghost'
-                  m={0}
-                  p={0}
-                  fontSize='2xl'
-                >
-                  <AiOutlineEdit />
-                </Button>
-              )}
-            </Heading>
-          ) : (
-            <Box>
+          {editUsername && isEditing ? (
+            <Box mt={4}>
               <form onSubmit={handleSubmit}>
                 <Input
                   placeholder={profileData.username}
@@ -176,6 +161,21 @@ const UserProfile = () => {
                 </Box>
               </form>
             </Box>
+          ) : (
+            <Heading fontWeight='regular'>
+              {profileData.username}{' '}
+              {isEditing && (
+                <Button
+                  onClick={handleEditUsernameState}
+                  variant='ghost'
+                  m={0}
+                  p={0}
+                  fontSize='2xl'
+                >
+                  <AiOutlineEdit />
+                </Button>
+              )}
+            </Heading>
           )}
           <Divider mt={4} />
         </Box>
@@ -213,7 +213,10 @@ const UserProfile = () => {
             )}
           </Box>
           <Box>
-            <EditProfileButton />
+            <EditProfileButton
+              editUsername={editUsername}
+              setEditUsername={setEditUsername}
+            />
           </Box>
         </Box>
         <Box mt={4}>
