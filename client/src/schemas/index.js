@@ -49,3 +49,7 @@ export const createLinkSchema = yup.object().shape({
     .matches(linkRules, { message: 'Please provide a link' })
     .required('Required'),
 })
+
+export const changeUsernameSchema = yup.object().shape({
+  username: yup.string().required('Required'),
+})

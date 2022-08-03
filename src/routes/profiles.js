@@ -24,7 +24,6 @@ router.get('/profile', async (req, res) => {
     res.status(404).json({ msg: 'missing session id' })
   }
 })
-
 //change username
 router.patch('/profile/username', async (req, res) => {
   try {
@@ -37,7 +36,7 @@ router.patch('/profile/username', async (req, res) => {
       const changeUsername = await User.findOneAndUpdate(userSID, {
         username: username,
       })
-      res.status(200).json({ msg: 'OK' })
+      res.status(200).json({ msg: 'username changed!' })
     }
   } catch (err) {
     res.status(400).json({ error: err })
